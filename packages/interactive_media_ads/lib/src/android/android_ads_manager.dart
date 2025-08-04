@@ -77,6 +77,11 @@ class AndroidAdsManager extends PlatformAdsManager {
     return _manager.skip();
   }
 
+  @override
+  Future<List<double>> getAdCuePoints() async {
+    return _manager.getAdCuePoints();
+  }
+
   // This value is created in a static method because the callback methods for
   // any wrapped classes must not reference the encapsulating object. This is to
   // prevent a circular reference that prevents garbage collection.

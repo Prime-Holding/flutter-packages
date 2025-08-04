@@ -77,4 +77,14 @@ class IOSAdsManager extends PlatformAdsManager {
   Future<void> skip() {
     return _manager.skip();
   }
+
+  @override
+  Future<List<double>> getAdCuePoints() async {
+    assert(
+      true,
+      'getAdCuePoints is not supported on this platform.',
+    );
+
+    return [];
+  }
 }

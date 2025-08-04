@@ -148,6 +148,7 @@ class TestAdsManager extends PlatformAdsManager {
     this.onPause,
     this.onResume,
     this.onSkip,
+    this.onGetAdCuePoints,
   });
 
   Future<void> Function({PlatformAdsRenderingSettings? settings})? onInit;
@@ -166,6 +167,8 @@ class TestAdsManager extends PlatformAdsManager {
   Future<void> Function()? onSkip;
 
   Future<void> Function()? onDestroy;
+
+  Future<List<double>> Function()? onGetAdCuePoints;
 
   @override
   Future<void> init({PlatformAdsRenderingSettings? settings}) async {
@@ -207,6 +210,11 @@ class TestAdsManager extends PlatformAdsManager {
   @override
   Future<void> skip() async {
     return onSkip?.call();
+  }
+
+  @override
+  Future<List<double>> getAdCuePoints() async {
+    return onGetAdCuePoints?.call() ?? <double>[];
   }
 }
 

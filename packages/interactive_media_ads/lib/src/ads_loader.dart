@@ -184,6 +184,11 @@ class AdsManager {
     return platform.skip();
   }
 
+  /// Retrieves the cue points for the current ad.
+  Future<List<double>> getAdCuePoints() {
+    return platform.getAdCuePoints();
+  }
+
   /// Discards current ad break and resumes content.
   ///
   /// If there is no current ad then the next ad break is discarded.
