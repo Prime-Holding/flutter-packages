@@ -45,4 +45,7 @@ abstract class PlatformAdsManager {
   /// Stops the ad and all tracking, then releases all assets that were loaded
   /// to play the ad.
   Future<void> destroy();
+
+  /// Retrieves the cue points for the current ad.
+  Future<List<double>> getAdCuePoints();
 }
